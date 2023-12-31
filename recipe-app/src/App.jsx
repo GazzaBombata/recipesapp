@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import styled from 'styled-components';
 import Form1 from './Form1.jsx'
+import RecipesList from './RecipesList';
 
 const RedHeading = styled.h1`
   color: red;
@@ -14,6 +15,7 @@ function App() {
         <div>
           <RedHeading>Hello React</RedHeading>
           <Form1></Form1>
+          <RecipesList></RecipesList>
         </div>
     </>
   );
