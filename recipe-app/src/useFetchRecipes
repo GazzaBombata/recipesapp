@@ -1,6 +1,8 @@
 import { useQuery } from 'react-query';
 import { useSelector } from 'react-redux';
 
+
+
 export const useFetchRecipes = () => {
   const query = useSelector((state) => state.query);
   const fetchURL = `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&apiKey=b6fa088f1b8b44fa89f2f895d3080a5c&query=${query}`;
