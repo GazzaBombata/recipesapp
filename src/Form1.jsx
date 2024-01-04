@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { setQuery } from './actions';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import RecipesList from './RecipesList';
 
 
 
@@ -29,8 +28,6 @@ function Form1() {
   const dispatch = useDispatch();
   const queryState = useSelector((state) => state.query);
   const [inputValue, setInputValue] = useState(queryState)
-  console.log('query:'+queryState)
-  console.log('input:'+inputValue)
 
   useEffect(() => {
     setInputValue(queryState)

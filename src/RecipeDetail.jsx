@@ -115,8 +115,6 @@ function RecipeDetail() {
     const dispatch = useDispatch();
   let { id } = useParams();
   const recipe = useSelector((state) => state.recipe);
-  const queryState = useSelector((state) => state.query);
-  console.log('query:'+queryState)
 
   const { isLoading, error, data } = useFetchDetails(id);
 
@@ -130,6 +128,7 @@ function RecipeDetail() {
     </StyledMain>
   )
   if (error) return <div>Error: {error.message}</div>;
+  if (!data) return <div>Error: data not defined</div>;
   
   const ingredients = data && data.extendedIngredients && data.extendedIngredients.length > 0 ? data.extendedIngredients : [
     {'id': 101,},
@@ -143,9 +142,7 @@ function RecipeDetail() {
 
   function handleClick(event, recipe) {
     event.preventDefault(); 
-    console.log('fquery:' + queryState);
     dispatch(setRecipe(' '));
-    console.log('fquery:' + queryState);
   }
   
 
