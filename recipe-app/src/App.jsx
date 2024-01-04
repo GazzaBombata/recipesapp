@@ -5,7 +5,7 @@ import Form1 from './Form1.jsx'
 import RecipesList from './RecipesList';
 
 const RedHeading = styled.h1`
-  color: red;
+  color: #ffb22d;
 `;
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
         <div>
-          <RedHeading>Hello React</RedHeading>
+          <RedHeading>Search for a vegetarian recipe!</RedHeading>
           <Form1></Form1>
           <RecipesList></RecipesList>
         </div>

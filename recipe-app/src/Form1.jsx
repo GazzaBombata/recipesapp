@@ -8,11 +8,16 @@ import RecipesList from './RecipesList';
 
 
 const StyledForm = styled.form`
-  
-`;
+  `;
 
 const Input = styled.input`
-  
+  box-shadow: 0 6px 12px #ffb22d78(0, 0, 0, 0.15);
+  width: 300px;
+  border-radius: 10px;
+  border: 1px solid #7e7e7e78;
+  padding: 5px;
+  outline-color: #fffa2d;
+
 `;
 
 const Button = styled.button`
@@ -23,22 +28,29 @@ const Button = styled.button`
 function Form1() {
   const dispatch = useDispatch();
   const queryState = useSelector((state) => state.query);
-  const [shouldShowRecipes, setShouldShowRecipes] = useState(false);
+  const [inputValue, setInputValue] = useState(queryState)
+  console.log('query:'+queryState)
+  console.log('input:'+inputValue)
+
+  useEffect(() => {
+    setInputValue(queryState)
+  }, [queryState]);
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    const inputValue = event.target.elements.inputName.value; 
     dispatch(setQuery(inputValue));
-    setShouldShowRecipes(true);
+  }
+
+  function handleInputChange (event) {
+    setInputValue(event.target.value);
   }
 
   return (
     <>
       <StyledForm onSubmit={handleFormSubmit}>
-        <Input type='text' name='inputName' required />
+        <Input type='text' name='inputName' onChange = {handleInputChange} required value={inputValue}/>
         <Button type='submit'>Submit</Button>
       </StyledForm>
-      {/* {shouldShowRecipes && <RecipesList />} */}
     </>
   );
 }
