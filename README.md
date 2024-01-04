@@ -17,18 +17,5 @@ Responsive design for various devices
 Challenges and Learnings
 Focused on overcoming challenges related to asynchronous data fetching, state management, and responsive design.
 
-Setup and Installation
-Instructions on how to set up the project locally.
-
-Usage
-Guidelines on how to use the application effectively.
-
-Contribution
-Details on how to contribute to the project.
-
-License
-License under which the project is released.
-
-GitHub Repository Link
 
 This README provides a comprehensive overview of the project, its functionalities, and its technical aspects. Feel free to tailor it to your specific project details.
