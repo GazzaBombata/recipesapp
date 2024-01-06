@@ -1,10 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import App from './App';
-import RecipeDetail from './RecipeDetail';
+import App from './components/App';
+import RecipeDetail from './components/RecipeDetail';
 import './main.css';
-import store from './store'; 
+import store from './redux/store'; 
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
